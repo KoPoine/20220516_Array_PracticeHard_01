@@ -59,12 +59,29 @@ public class MainDrive {
 			}
 		}
 		
+//		Bubble sort
+		
+		for (int i = 0; i < winNumbers.length; i++) {
+			
+			for (int j = 0; j < winNumbers.length-1; j++) {
+				
+				if (winNumbers[j] > winNumbers[j+1]) {
+					
+					int backUp = winNumbers[j];
+					
+					winNumbers[j] = winNumbers[j+1];
+					
+					winNumbers[j+1] = backUp;
+				}
+			}
+		}
+		
 		System.out.print(winNumbers[0] + ", ");
 		System.out.print(winNumbers[1] + ", ");
 		System.out.print(winNumbers[2] + ", ");
 		System.out.print(winNumbers[3] + ", ");
 		System.out.print(winNumbers[4] + ", ");
-		System.out.print(winNumbers[5] + ", ");
+		System.out.print(winNumbers[5]);
 		
 		System.out.println();
 		
