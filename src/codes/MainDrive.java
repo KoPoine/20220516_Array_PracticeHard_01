@@ -56,38 +56,63 @@ public class MainDrive {
 			}
 		}
 		
-//		당첨 등수 확인
-//		if (correctCount == 6) {
-//			System.out.println("축 당첨 - 1등");
-//		} else if (correctCount == 5) {
-//			System.out.println("축 당첨 - 3등");
-//		} else if (correctCount == 4) {
-//			System.out.println("축 당첨 - 4등");
-//		} else if (correctCount == 3) {
-//			System.out.println("축 당첨 - 5등");
-//		} else {
-//			System.out.println("낙첨 되었습니다.");
-//		}
-		
-//		당첨 등수 확인(switch문 활용)
-		switch (correctCount) {
-		case 6:
-			System.out.println("축 당첨 - 1등");
-			break;
-		case 5:
-			System.out.println("축 당첨 - 3등");
-			break;
-		case 4:
-			System.out.println("축 당첨 - 4등");
-			break;
-		case 3:
-			System.out.println("축 당첨 - 5등");
-			break;
-		default:
-			System.out.println("낙첨 되었습니다.");
-			break;
+//		보너스 번호 뽑기
+		int bonusNum = 0;
+		while (true) {
+//			Math.random() => Double  0 .. 1
+			int randomNum = (int) (Math.random() * 45 + 1);
+			
+			boolean isRangeOk = (1 <= randomNum && randomNum <= 45);
+			
+			boolean isRepeat = false;
+			
+			for (int num : winNumbers) {
+				if (num == randomNum) {
+					isRepeat = true;
+				}
+			}
+			
+			if (isRangeOk && !isRepeat) {
+				bonusNum = randomNum;
+				break;	
+			}			
 		}
 		
+		
+//		당첨 등수 확인
+		if (correctCount == 6) {
+			System.out.println("축 당첨 - 1등");
+		} else if (correctCount == 5) {
+//			보너스 번호와의 동일여부 > 2등과 3등의 분기처리
+			System.out.println("축 당첨 - 2등");
+			
+			System.out.println("축 당첨 - 3등");
+		} else if (correctCount == 4) {
+			System.out.println("축 당첨 - 4등");
+		} else if (correctCount == 3) {
+			System.out.println("축 당첨 - 5등");
+		} else {
+			System.out.println("낙첨 되었습니다.");
+		}
+		
+//		당첨 등수 확인(switch문 활용)
+//		switch (correctCount) {
+//		case 6:
+//			System.out.println("축 당첨 - 1등");
+//			break;
+//		case 5:
+//			System.out.println("축 당첨 - 3등");
+//			break;
+//		case 4:
+//			System.out.println("축 당첨 - 4등");
+//			break;
+//		case 3:
+//			System.out.println("축 당첨 - 5등");
+//			break;
+//		default:
+//			System.out.println("낙첨 되었습니다.");
+//			break;
+//		}
 		
 		
 		
