@@ -83,10 +83,22 @@ public class MainDrive {
 		if (correctCount == 6) {
 			System.out.println("축 당첨 - 1등");
 		} else if (correctCount == 5) {
-//			보너스 번호와의 동일여부 > 2등과 3등의 분기처리
-			System.out.println("축 당첨 - 2등");
 			
-			System.out.println("축 당첨 - 3등");
+//			보너스 번호와의 동일여부 > 2등과 3등의 분기처리
+			boolean isBonusCorrect = false;
+			
+			for (int myNum : myNumbers) {
+				if (myNum == bonusNum) {
+					isBonusCorrect = true;
+					break;
+				}
+			}
+			
+			if (isBonusCorrect) {
+				System.out.println("축 당첨 - 2등");
+			} else {
+				System.out.println("축 당첨 - 3등");	
+			}
 		} else if (correctCount == 4) {
 			System.out.println("축 당첨 - 4등");
 		} else if (correctCount == 3) {
