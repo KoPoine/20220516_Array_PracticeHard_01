@@ -57,16 +57,35 @@ public class MainDrive {
 		}
 		
 //		당첨 등수 확인
-		if (correctCount == 6) {
+//		if (correctCount == 6) {
+//			System.out.println("축 당첨 - 1등");
+//		} else if (correctCount == 5) {
+//			System.out.println("축 당첨 - 3등");
+//		} else if (correctCount == 4) {
+//			System.out.println("축 당첨 - 4등");
+//		} else if (correctCount == 3) {
+//			System.out.println("축 당첨 - 5등");
+//		} else {
+//			System.out.println("낙첨 되었습니다.");
+//		}
+		
+//		당첨 등수 확인(switch문 활용)
+		switch (correctCount) {
+		case 6:
 			System.out.println("축 당첨 - 1등");
-		} else if (correctCount == 5) {
+			break;
+		case 5:
 			System.out.println("축 당첨 - 3등");
-		} else if (correctCount == 4) {
+			break;
+		case 4:
 			System.out.println("축 당첨 - 4등");
-		} else if (correctCount == 3) {
+			break;
+		case 3:
 			System.out.println("축 당첨 - 5등");
-		} else {
+			break;
+		default:
 			System.out.println("낙첨 되었습니다.");
+			break;
 		}
 		
 		
