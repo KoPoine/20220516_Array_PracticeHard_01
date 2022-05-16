@@ -8,7 +8,7 @@ public class MainDrive {
 		
 		int[] myNumbers = new int [6];
 		
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < myNumbers.length; i++) {
 			
 			while (true) {
 				System.out.print((i+1) + "번째 숫자 : ");
@@ -42,7 +42,31 @@ public class MainDrive {
 		winNumbers[5] = 31;
 		
 //		당첨번호 랜덤으로 작성
+		for (int i = 0; i < winNumbers.length; i++) {
+			int randomNum = (int) (Math.random() * 45 + 1);
+			
+			boolean isRepeat = false;
+			
+			for (int num : winNumbers) {
+				if (num == randomNum) {
+					isRepeat = true;
+				}
+			}
+			
+			if (!isRepeat) {
+				winNumbers[i] = randomNum;
+				break;
+			}
+		}
 		
+		System.out.print(winNumbers[0] + ", ");
+		System.out.print(winNumbers[1] + ", ");
+		System.out.print(winNumbers[2] + ", ");
+		System.out.print(winNumbers[3] + ", ");
+		System.out.print(winNumbers[4] + ", ");
+		System.out.print(winNumbers[5] + ", ");
+		
+		System.out.println();
 		
 //		몇등인지 맞추는 로직 진행
 //		당첨번호 확인
@@ -62,8 +86,6 @@ public class MainDrive {
 //			Math.random() => Double  0 .. 1
 			int randomNum = (int) (Math.random() * 45 + 1);
 			
-			boolean isRangeOk = (1 <= randomNum && randomNum <= 45);
-			
 			boolean isRepeat = false;
 			
 			for (int num : winNumbers) {
@@ -72,7 +94,7 @@ public class MainDrive {
 				}
 			}
 			
-			if (isRangeOk && !isRepeat) {
+			if (!isRepeat) {
 				bonusNum = randomNum;
 				break;	
 			}			
