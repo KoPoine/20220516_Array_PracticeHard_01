@@ -30,5 +30,49 @@ public class MainDrive {
 				}
 			}
 		}
+		
+		int[] winNumbers = new int[6];
+		
+//		임시로 로직 확인용 하드코딩
+		winNumbers[0] = 10;
+		winNumbers[1] = 11;
+		winNumbers[2] = 20;
+		winNumbers[3] = 21;
+		winNumbers[4] = 30;
+		winNumbers[5] = 31;
+		
+//		당첨번호 랜덤으로 작성
+		
+		
+//		몇등인지 맞추는 로직 진행
+//		당첨번호 확인
+		int correctCount = 0;
+		
+		for (int myNum : myNumbers) {
+			for (int winNum : winNumbers) {
+				if (myNum == winNum) {
+					correctCount++;
+				}
+			}
+		}
+		
+//		당첨 등수 확인
+		if (correctCount == 6) {
+			System.out.println("축 당첨 - 1등");
+		} else if (correctCount == 5) {
+			System.out.println("축 당첨 - 3등");
+		} else if (correctCount == 4) {
+			System.out.println("축 당첨 - 4등");
+		} else if (correctCount == 3) {
+			System.out.println("축 당첨 - 5등");
+		} else {
+			System.out.println("낙첨 되었습니다.");
+		}
+		
+		
+		
+		
+		
+		
 	}
 }
