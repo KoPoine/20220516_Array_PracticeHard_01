@@ -43,19 +43,21 @@ public class MainDrive {
 		
 //		당첨번호 랜덤으로 작성
 		for (int i = 0; i < winNumbers.length; i++) {
-			int randomNum = (int) (Math.random() * 45 + 1);
-			
-			boolean isRepeat = false;
-			
-			for (int num : winNumbers) {
-				if (num == randomNum) {
-					isRepeat = true;
+			while (true) {
+				int randomNum = (int) (Math.random() * 45 + 1);
+				
+				boolean isRepeat = false;
+				
+				for (int num : winNumbers) {
+					if (num == randomNum) {
+						isRepeat = true;
+					}
 				}
-			}
-			
-			if (!isRepeat) {
-				winNumbers[i] = randomNum;
-				break;
+				
+				if (!isRepeat) {
+					winNumbers[i] = randomNum;
+					break;
+				}
 			}
 		}
 		
